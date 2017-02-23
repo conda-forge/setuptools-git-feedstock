@@ -1,15 +1,16 @@
 {%set name = "setuptools-git" %}
-{%set version = "1.1" %}
+{%set version = "1.2" %}
+{%set compress_type = "tar.gz" %}
 {%set hash_type = "sha256" %}
-{%set hash_val = "047d7595546635edebef226bc566579d422ccc48a8a91c7d32d8bd174f68f831" %}
+{%set hash_val = "ff64136da01aabba76ae88b050e7197918d8b2139ccbf6144e14d472b9c40445" %}
 
 package:
   name: {{ name }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  fn: {{ name }}-{{ version }}.{{ compress_type }}
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ compress_type }}
   {{ hash_type }}: {{ hash_val }}
 
 build:
@@ -34,7 +35,9 @@ test:
 about:
   home: https://github.com/msabramo/setuptools-git
   license: BSD 3-Clause
+  license_family: BSD
   summary: 'Setuptools revision control system plugin for Git'
+  dev_url: https://github.com/msabramo/setuptools-git
 
 extra:
   recipe-maintainers:
